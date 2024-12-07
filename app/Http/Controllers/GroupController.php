@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class GroupController extends Controller
 {
@@ -32,7 +33,7 @@ class GroupController extends Controller
             ...$request->all(),
             ...$request->validate([
                 'code' => 'required|string|max:255|unique:groups,code',
-                'name' => 'nullable|string|max:255',
+                'name' => 'required|string|max:255',
             ])
         ]);
 
@@ -50,17 +51,32 @@ class GroupController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Group $group)
     {
-        //
+        return view('pages.master.group.edit', [
+            'group' => $group,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Group $group)
     {
-        //
+        $group->update([
+            ...$request->all(),
+            ...$request->validate([
+                'code' => [
+                    'required',
+                    'string',
+                    'max:255',
+                    Rule::unique('groups', 'code')->ignore($group->id)
+                ],
+                'name' => 'required|string|max:255',
+            ])
+        ]);
+
+        return redirect()->route('master.group.index')->with('success', "Master Group with code {$group->code} successfully updated");
     }
 
     /**

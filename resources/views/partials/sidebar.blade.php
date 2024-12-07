@@ -74,14 +74,43 @@
                         </a>
                         <ul class="sidebar-submenu">
                             <li><a href="{{ route('master.group.index') }}">Group</a></li>
+                            <li><a href="{{ route('master.klasifikasi.index') }}">Klasifikasi</a></li>
+                            <li><a href="{{ route('master.sub-klasifikasi.index') }}">Subklasifikasi</a></li>
+                            <li><a href="{{ route('master.account.index') }}">Account</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-list">
+                        <i class="fa fa-thumb-tack"></i>
+                        <a class="sidebar-link sidebar-title active" href="javascript:void(0)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"
+                                fill="none" class="text-white">
+                                <rect x="10" y="8" width="44" height="48" rx="4" fill="#e0e7ff"
+                                    stroke="#4f46e5" stroke-width="2" />
+                                <line x1="18" y1="16" x2="46" y2="16" stroke="#4f46e5"
+                                    stroke-width="2" stroke-linecap="round" />
+                                <line x1="18" y1="24" x2="46" y2="24" stroke="#4f46e5"
+                                    stroke-width="2" stroke-linecap="round" />
+                                <line x1="18" y1="32" x2="46" y2="32" stroke="#4f46e5"
+                                    stroke-width="2" stroke-linecap="round" />
+                                <line x1="18" y1="40" x2="46" y2="40" stroke="#4f46e5"
+                                    stroke-width="2" stroke-linecap="round" />
+                                <circle cx="14" cy="32" r="2" fill="#4f46e5" />
+                            </svg>
+                            <svg class="fill-icon">
+                                <use href="/assets/svg/icon-sprite.svg#fill-widget"></use>
+                            </svg>
+                            <span class="lan">Ledger</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="{{ route('ledger.general-journal.index') }}">General Journal</a></li>
                         </ul>
                     </li>
                     <li class="sidebar-list">
                         <i class="fa fa-thumb-tack"></i>
                         <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
                                 class="icon icon-tabler icons-tabler-outline icon-tabler-list-details text-white">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M13 5h8" />

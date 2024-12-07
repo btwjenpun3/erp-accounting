@@ -42,9 +42,9 @@
 
                 <hr>
                 <div class="table-responsive theme-scrollbar mt-3">
-                    <table class="display" id="basic-1">
+                    <table class="table table-striped table-bordered" id="basic-1">
                         <thead>
-                            <tr class="bg-light-primary text-dark">
+                            <tr class="bg-light-info text-dark">
                                 <th></th>
                                 <th>Material Request No</th>
                                 <th>Material Request Date</th>

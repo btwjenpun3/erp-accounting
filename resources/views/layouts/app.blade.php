@@ -10,6 +10,7 @@
     <meta name="keywords"
         content="erp, erp manufacture, erp custom, it inventory, it inventory kawasan berikat, erp kawasan berikat">
     <meta name="author" content="pixelstrap">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
     <title>Kindy Data Accounting</title>
@@ -33,6 +34,8 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/vendors/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/vendors/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/toastify.css">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="/assets/css/vendors/bootstrap.css">
@@ -59,10 +62,47 @@
             color: #333;
             cursor: not-allowed;
         }
+
+        .col-5 {
+            width: 5%;
+        }
+
+        .col-10 {
+            width: 10%;
+        }
+
+        .col-60 {
+            width: 60%;
+        }
+
+        .col-30 {
+            width: 30%;
+            text-align: center;
+        }
+
+        .dropdown-toggle:hover {
+            background-color: #79d38e;
+            border-color: #218838;
+            color: #fff;
+        }
+
+        /* Hover style untuk item dropdown */
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #939694;
+            color: #e7ebe8;
+            font-weight: bold;
+        }
+
+        .dropdown-menu .dropdown-item.text-success:hover {
+            background-color: #d4edda;
+            color: #155724;
+            font-weight: bold;/
+        }
     </style>
     @yield('css')
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+    @livewireStyles()
 </head>
 
 <body>
@@ -132,9 +172,11 @@
             @include('partials.footer')
             <!-- footer end -->
 
+            @livewire('notification.toastify')
         </div>
     </div>
     <!-- latest jquery-->
+    @livewireScripts()
     <!-- Bootstrap js-->
     <script src="/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- feather icon js-->
@@ -151,8 +193,8 @@
     <script src="/assets/js/slick/slick.min.js"></script>
     <script src="/assets/js/slick/slick.js"></script>
     <script src="/assets/js/header-slick.js"></script>
+    <script src="/assets/js/toastify/toastify.js"></script>
     <!-- calendar js-->
-
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="/assets/js/script.js"></script>

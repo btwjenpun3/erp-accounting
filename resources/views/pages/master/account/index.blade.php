@@ -6,11 +6,11 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="">
-                        <h4>Group</h4>
-                        <p class="f-m-light mt-1">Page for create Master Group</p>
+                        <h4>Account</h4>
+                        <p class="f-m-light mt-1">Page for create Master Account</p>
                     </div>
                     <div class="">
-                        <a href="{{ route('master.group.create') }}">
+                        <a href="{{ route('master.account.create') }}">
                             <button class="btn btn-primary">
                                 Add New
                             </button>
@@ -25,6 +25,7 @@
                             <tr class="bg-light-info">
                                 <th>Code</th>
                                 <th>Name</th>
+                                <th>Desc</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -41,17 +42,21 @@
             processing: true,
             serverSide: true,
             ajax: {
-                url: "{{ route('datatable.master.group') }}",
+                url: "{{ route('datatable.master.account') }}",
                 type: 'GET',
             },
             columns: [{
                     data: 'code',
                     name: 'code',
                     className: 'col-10'
-                },
-                {
+                }, {
                     data: 'name',
                     name: 'name',
+                    className: 'col-60'
+                },
+                {
+                    data: 'desc',
+                    name: 'desc',
                     className: 'col-60'
                 },
                 {
@@ -61,7 +66,7 @@
                     orderable: false,
                     searchable: false,
                     render: function(data, type, row, meta) {
-                        let url = "{{ route('master.group.edit', ':id') }}";
+                        let url = "{{ route('master.account.edit', ':id') }}";
                         url = url.replace(':id', data);
 
                         return `
